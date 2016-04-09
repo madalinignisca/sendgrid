@@ -1,0 +1,36 @@
+{
+    "name": "madalinignisca/sendgrid",
+    "description": "Sendgrid plugin for CakePHP",
+    "type": "cakephp-plugin",
+    "keywords": [
+        "cakephp",
+        "sendgrid"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Madalin Ignisca",
+            "role": "Author"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.16",
+        "cakephp/cakephp": "~3.0",
+	    "sendgrid/sendgrid": "~4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*",
+        "cakephp/cakephp-codesniffer": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "MadalinIgnisca\\Sendgrid\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MadalinIgnisca\\Sendgrid\\Test\\": "tests",
+            "Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
+        }
+    }
+}
