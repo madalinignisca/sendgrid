@@ -2,5 +2,5 @@
 
 use Cake\Core\Configure;
 
-Configure::load('madalinignisca/sendgrid.sendgrid');
+Configure::load('MadalinIgnisca/Sendgrid.sendgrid');
 
