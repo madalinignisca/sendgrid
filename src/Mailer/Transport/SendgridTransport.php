@@ -7,10 +7,10 @@ use Cake\Mailer\Email;
 
 class SendgridTransport extends AbstractTransport
 {
-    private $sendgrid;
-    private $sendgridEmail;
+    protected $sendgrid;
+    protected $sendgridEmail;
     
-    private function setupSendgrid()
+    protected function setupSendgrid()
     {
         $this->sendgrid = new \SendGrid(
             $this->config('username'),
@@ -18,7 +18,7 @@ class SendgridTransport extends AbstractTransport
         );
     }
 
-    private function setupEmail(Email $email)
+    protected function setupEmail(Email $email)
     {
         $this->sendgridEmail = new \SendGrid\Email();
         foreach ($email->to() as $e => $n) {
