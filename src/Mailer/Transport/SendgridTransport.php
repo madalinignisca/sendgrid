@@ -34,6 +34,12 @@ class SendgridTransport extends AbstractTransport
             $this->sendgridEmail->setFrom($e);
             $this->sendgridEmail->setFromName($n);
         }
+        foreach ($email->replyTo() as $e => $n) {
+            $this->sendgridEmail->setReplyTo($e, $n);
+        }
+        foreach ($email->sender() as $e => $n) {
+            $this->sendgridEmail->addHeader('Sender', sprintf('%s <%s>', $n, $e));
+        }
         $this->sendgridEmail->setSubject($email->subject());
         $this->sendgridEmail->setText($email->message(Email::MESSAGE_TEXT));
         $this->sendgridEmail->setHtml($email->message(Email::MESSAGE_HTML));
